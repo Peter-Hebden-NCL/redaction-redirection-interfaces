@@ -1,0 +1,3 @@
+Required in this folder:
+
+- 8 pairs of images, named page1.jpg, poem1.jpg, page2.jpg, poem2.jpg, etc. The 'page' images are displayed first, and slowly transformed into the corresponding 'poem' image.

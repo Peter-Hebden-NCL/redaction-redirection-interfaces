@@ -1,0 +1,477 @@
+<html>
+<head>
+    <style>
+
+        #poem {
+            margin-top: 7em;
+            margin-left:3em;
+        }
+
+        .vid-container {
+            width: 100vw;
+            height: 100vh;
+            margin: auto 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .vid-container video {
+            height: 150%;
+            transition: 1s all;
+            margin-left: -25%;
+        }
+
+        #bg-vid video {
+            height: 100%;
+        }
+
+        #word-vid video {
+            opacity: 0.3;
+        }
+
+        .revealed, .invis, .vid-invis{
+            transition: 3s all;
+        }
+
+        .line div.revealed {
+            color: rgba(0,0,0,0.3);
+        }
+
+        .line div.revealed .keep,  .line div.invis .keep, .neologisms div.revealed, .neologisms div.invis {
+            color: rgba(0,0,0,1);
+        }
+
+        line div.invis{
+            color: rgba(0,0,0,0);
+        }
+
+        .invis-proof {
+            opacity: 1 !important
+        }
+
+        .vid-invis{
+            opacity: 0 !important;
+        }
+
+        html,body {
+            padding:0;
+            width: 100vw;
+            height:100%;
+            font-size: 1em;
+            font-family: sans-serif;
+            color: rgba(255,255,255,0)
+            /* visibility: hidden; */
+        }
+
+        body {
+            margin: 3em auto;
+            width: 70%;
+            overflow: hidden;
+        }
+
+        .neologisms {
+            font-style: italic;
+        }
+
+        .keep {
+            display: inline;
+            /* color: rgba(0,0,0,1); */
+        }
+
+        .line, .line div {
+            width: 100%;
+        }
+
+        .line {
+            position: relative;
+        }
+
+        .line div {
+            position: absolute;
+            opacity: 1;
+            visibility: visible;
+            transition: 3s all;
+        }
+
+        .line._1 {
+            top: 1em;
+        }
+        .line._2 {
+            top: 3em;
+        }
+        .line._3 {
+            top: 5em;
+        }
+        .line._4 {
+            top: 10em;
+        }
+        .line._5 {
+            top: 15em;
+        }
+        .line._6 {
+            top: 17em;
+        }
+        .line._7 {
+            top: 20em;
+        }
+        .line._8 {
+            top: 23em;
+        }
+        .line._9 {
+            top: 28em;
+        }
+        .line._10 {
+            top: 30em;
+        }
+        .line._11 {
+            top: 32em;
+        }
+        .line._12 {
+            top: 35em;
+        }
+
+        .extract._1{
+            left: -6.5em;
+        }
+        .extract._2{
+            left: 0.5em;
+        }
+        .extract._3{
+            left: -1em;
+        }
+        .extract._4{
+            left: 3em;
+        }
+        .extract._5{
+            left: 9em;
+        }
+        .extract._6{
+            left: 18.5em;
+        }
+        .extract._7{
+            left: 17.5em;
+        }
+        .extract._8{
+            left: 19.5em;
+        }
+        .extract._9{
+            left: 15.5em;
+        }
+        .extract._10{
+            left: 31em;
+        }
+        .extract._11{
+            left: 30.5em;
+        }
+        .extract._12{
+            left: 41em;
+        }
+        .extract._13{
+            left: -2em;
+        }
+        .extract._14{
+            left: 9em;
+        }
+        .extract._15{
+            left: 15em;
+        }
+        .extract._16{
+            left: 15em;
+        }
+        .extract._17{
+            left: 18.5em;
+        }
+        .extract._18{
+            left: 19em;
+        }
+        .extract._19{
+            left: 21.5em;
+        }
+        .extract._20{
+            left: 32em;
+        }
+        .extract._21{
+            left: 36em;
+        }
+        .extract._22{
+            left: 23.5em;
+        }
+        .extract._23{
+            left: 26.5em;
+        }
+        .extract._24{
+            left: 34em;
+        }
+        .extract._25{
+            left: 35.5em;
+        }
+        .extract._26{
+            left: 45em;
+        }
+        .extract._27{
+            left: -13.75em;
+        }
+        .extract._28{
+            left: -4.5em;
+        }
+        .extract._29{
+            left: -4em;
+        }
+        .extract._30{
+            left: 10em;
+        }
+        .extract._31{
+            left: -4.75em;
+        }
+        .extract._32{
+            left: -1.5em;
+        }
+        .extract._33{
+            left: 12em;
+        }
+        .extract._34{
+            left: 19em;
+        }
+        .extract._35{
+            left: 24em;
+        }
+        .extract._36{
+            left: 24em;
+        }
+        .extract._37{
+            left: 34.75em;
+        }
+        .extract._38{
+            left: 21.75em;
+        }
+
+        #threatseeker{
+            left: 15em;
+        }
+        #peatcave{
+            left: 23em;
+        }
+        #shivercrater{
+            left: 29em;
+        }
+        #longerfriend{
+            left: 15em;
+        }
+        #amateuradult{
+            left: 22em;
+        }
+        #groupmelt{
+            left: 30em;
+        }
+        #persondweller{
+            left: 15em;
+        }
+        #mortalisland{
+            left: 23em;
+        }
+        #sentimentalist{
+            left: 30.5em;
+        }
+
+        #paper {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-image: url("paper.png");
+            background-size: cover;
+            z-index: 1; 
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="paper"></div>
+    <div class="vid-container" id="word-vid"></div>
+    <div id="poem">    
+        <div class="section erasures _1 poet_one">
+            <div class="line _1">
+                <!--LOREM ISPUM PLACEHOLDER TEXT USED HERE - 'keep' class used around phrases that do not fade away-->
+                <div class="extract _1">Lorem ipsum dolor sit amet, consectetur <div class="keep">adipiscing</div>adipiscing elit,</div>
+                <div class="extract _2">sed do eiusmod tempor incididunt <div class="keep">ut labore</div>ut labore</div>
+                <div class="extract _3">et dolore magna aliqua. Ut <div class="keep">enim ad minim</div>enim ad minim veniam</div>
+                <div class="extract _4"><div class="keep">Lorem ipsum</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</div>
+                <div class="extract _5">sed do eiusmod tempor <div class="keep">incididunt</div>incididunt ut labore</div>
+            </div>
+            <div class="line _2">
+                <div class="extract _6">sed do eiusmod tempor incididunt <div class="keep">ut labore</div>ut labore</div>
+                <div class="extract _7">et dolore magna aliqua. Ut <div class="keep">enim ad minim</div>enim ad minim veniam</div>
+                <div class="extract _8"><div class="keep">Lorem ipsum</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</div>
+                <div class="extract _9">sed do eiusmod tempor <div class="keep">incididunt</div>incididunt ut labore</div>
+                <div class="extract _10">et dolore <div class="keep">magna aliqua</div>magna aliqua. Ut enim ad minim veniam</div>
+                <div class="extract _11">Lorem ipsum dolor sit amet, consectetur <div class="keep">adipiscing</div>adipiscing elit,</div>
+            </div>
+            <div class="line _3">
+                <div class="extract _12">sed do eiusmod tempor <div class="keep">incididunt</div>incididunt ut labore</div>
+            
+            </div>
+        </div>
+
+        <div class="section neologisms _1">
+            <div class="line _4">
+                <div id="wordone">wordone</div>
+                <div id="wordtwo">wordtwo</div>
+                <div id="wordthree">wordthree</div>      
+            </div>
+        </div>
+
+        <div class="section erasures _2 poet_two">
+            <div class="line _5">
+                <div class="extract _13"><div class="keep">Lorem ipsum</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</div>
+                <div class="extract _14">sed do eiusmod tempor <div class="keep">incididunt</div>incididunt ut labore</div>
+                <div class="extract _15">et dolore <div class="keep">magna aliqua</div>magna aliqua. Ut enim ad minim veniam</div>
+                <div class="extract _16">Lorem ipsum dolor sit amet, consectetur <div class="keep">adipiscing</div>adipiscing elit,</div>
+            </div>
+            <div class="line _6">
+                <div class="extract _17">sed do eiusmod tempor incididunt <div class="keep">ut labore</div>ut labore</div>
+                <div class="extract _18">et dolore magna aliqua. Ut <div class="keep">enim ad minim</div>enim ad minim veniam</div>
+                <div class="extract _19"><div class="keep">Lorem ipsum</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</div>
+                <div class="extract _20">sed do eiusmod tempor <div class="keep">incididunt</div>incididunt ut labore</div>
+                <div class="extract _21">et dolore <div class="keep">magna aliqua</div>magna aliqua. Ut enim ad minim veniam</div>
+            </div>
+            <div class="line _7">
+                <div class="extract _22">Lorem ipsum dolor sit amet, consectetur <div class="keep">adipiscing</div>adipiscing elit,</div>
+                <div class="extract _23">sed do eiusmod tempor incididunt <div class="keep">ut labore</div>ut labore</div>
+                <div class="extract _24">et dolore magna aliqua. Ut <div class="keep">enim ad minim</div>enim ad minim veniam</div>
+                <div class="extract _25"><div class="keep">Lorem ipsum</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</div>
+                <div class="extract _26">sed do eiusmod tempor <div class="keep">incididunt</div>incididunt ut labore</div>
+            </div>
+        </div>
+
+        <div class="section neologisms _2">
+            <div class="line _8">
+                <div id="wordfour">wordfour</div>
+                <div id="wordfive">wordfive</div>
+                <div id="wordsix">wordsix</div>
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+    <script>
+
+// array of words from the 'neologisms' divs in the display HTML - PLACEHOLDERS USED HERE
+all_words = ["wordone","wordtwo","wordthree","wordfour","wordfive","wordsix"];
+
+used_words = [];
+used_extracts = [];
+
+$(document).ready(function(){
+    $("#bg-vid video").get(0).play()
+});
+
+$(document).keydown(function(){
+    console.log("running!");
+    $(document).off("keydown");
+
+    play_poem = setInterval(function(){
+
+        //hide previous video
+        if (used_words.length > 0) {
+            $("#word-vid video").addClass("vid-invis");
+        }
+
+        //if we haven't seen all the words yet...
+        if (used_words.length < all_words.length) {
+            // ...keep picking words at random...
+            do {
+                word_index = Math.floor(Math.random()*9); // 0-8
+            } while ( used_words.includes(all_words[word_index]) ) //...continue while ever the word has already been used, until we find one that hasn't
+            selected = all_words[word_index];
+            used_words.push(selected);
+            console.log(used_words);
+
+            //pick a video batch at random
+            video_batch = Math.floor(Math.random()*3)+1; // 1-3
+            console.log(video_batch)
+
+            //delay for 1 sec to give the previous video time to fade
+            setTimeout(function(){
+                //... play the video for the word - SECOND
+                $("#word-vid").html("<video src='words/"+selected+"_"+video_batch+".mov'>") 
+                setTimeout(function(){
+                    $("#word-vid video").get(0).play()
+                },7000);
+
+                //select 4-5 extracts to reveal
+                if (used_words.length > 7) {
+                    extract_count = 5;
+                } else {
+                    extract_count = 4;
+                }
+
+                current_extracts = [];
+                while (current_extracts.length < extract_count) {
+                    new_extract = Math.floor(Math.random()*38)+1; // 1-38
+                    if ( 
+                        !(used_extracts.includes(new_extract)) 
+                        && 
+                        !(current_extracts.includes(new_extract)) 
+                    ) {
+                        current_extracts.push(new_extract);
+                    }
+                }
+                used_extracts = used_extracts.concat(current_extracts);
+
+                //reveal extracts - FIRST
+                setTimeout(function(){
+                    for (n in current_extracts) {
+                        $(".extract._"+current_extracts[n]).addClass("revealed");
+                    }
+                },500)
+
+                //reveal word - LAST
+                setTimeout(function(){
+                    $("#"+selected).addClass("revealed");
+                },12000);
+            
+            },1000);
+
+            //end!
+            if (used_words.length == all_words.length) {
+                //timer for fading out last video
+                setTimeout(function(){
+                    $("#word-vid video").addClass("vid-invis");
+                }, 15000);
+                //timer for fading out source words and background static
+                setTimeout(function(){
+                    $(".line div").removeClass("revealed"); $(".line div").addClass("invis");
+                    $("#bg-vid video").addClass("vid-invis");
+                }, 22000);
+
+                clearInterval(play_poem);
+            }
+        }
+        
+    },25000); //every 25secs
+});
+
+//EXAMPLES
+
+// $(".line._1 div").addClass("revealed"); //reveal whole line !
+
+//$(".line._1 div").removeClass("revealed"); $(".line._1 div").addClass("invis"); // hide source words !
+
+// $(".line div").addClass("revealed"); //reveal whole text !
+
+// $(".line div").removeClass("revealed"); $(".line div").addClass("invis"); // hide all source words !
+
+//$("#word-vid").html("<video src='words/threatseeker_2.mov'>") // load word video !
+
+//$("#word-vid video").get(0).play() // play word video !
+
+    </script>
+</body>
+</html>

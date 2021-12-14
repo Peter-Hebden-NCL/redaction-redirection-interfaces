@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <style>
+            html,body {
+                background-color:#e4dcd1;
+                margin:0px;
+                padding:0px;
+                overflow: hidden;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            #container {
+                height: 100vh;
+                margin: 10vw;
+                width: 90vw;
+                font-size: 1.5em;
+                overflow: hidden;
+            }
+
+            #scroll {
+                top: 50vh;
+                height: fit-content;
+                position: absolute;
+                width: 100vw;
+            }
+
+            #scroll p {
+                color: #4c3200;
+                
+            }
+
+            #scroll p span{
+                position: relative;
+                transition: all 60s ease;
+            }
+
+            .erased {
+                color: #fff8e8;
+            }
+
+
+            /*BACKGROUND STUFF*/
+            #img-container {
+                transition: all 30s linear;
+                background-position:center;
+                background-size:cover;
+                height:100vh;
+                width:100vw;
+                position:absolute;
+                background-image: url('images/bg-1.png');
+            }
+
+            .bg-fade {
+                opacity:0;
+            }
+
+            .bg-reveal {
+                opacity:0.7;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!--BACKGROUND-->
+        <div id="img-container" class=".bg-reveal"></div>
+        
+        <!--TEXT-->
+        <div id="container">
+            <div id="scroll">
+                <!-- LOREM ISPUM PLACEHOLDER TEXT-->
+                <!-- Words to disappear have class 'lose', words scroll all the way up the screen have class 'keep' -->
+                <p><span class="lose">Lorem</span> <span class="keep">ipsum</span> <span class="lose">dolor</span> <span class="lose">sit</span> <span class="lose">amet,</span> <span class="lose">consectetur</span> <span class="lose">adipiscing</span> <span class="lose">elit,</span></p>
+                <p><span class="lose">sed</span> <span class="lose">do</span> <span class="keep">eiusmod</span> <span class="lose">tempor</span> <span class="lose">incididunt</span> <span class="lose">ut</span> <span class="lose">labore</span></p>
+                <p><span class="lose">et</span> <span class="lose">dolore</span> <span class="lose">magna</span> <span class="keep">aliqua.</span> <span class="lose">Ut</span> <span class="lose">enim</span> <span class="keep">ad</span> <span class="lose">minim</span> <span class="lose">veniam,</span></p>
+                <p><span class="lose">quis</span> <span class="lose">nostrud</span> <span class="lose">exercitation</span> <span class="keep">ullamco</span> <span class="lose">laboris</span> <span class="keep">nisi</span> <span class="lose">ut</span></p>
+                <p><span class="keep">aliquip</span> <span class="lose">ex</span> <span class="keep">ea</span> <span class="lose">commodo</span> <span class="lose">consequat.</span> <span class="lose">Duis</span> <span class="lose">aute</span> <span class="lose">irure</span> <span class="lose">dolor</span></p>
+                <p><span class="keep">in</span> <span class="keep">reprehenderit</span> <span class="keep">in</span> <span class="lose">voluptate</span> <span class="lose">velit</span> <span class="lose">esse</span> <span class="lose">cillum</span> <span class="lose">dolore</span></p>
+                <p><span class="lose">eu</span> <span class="lose">fugiat</span> <span class="lose">nulla</span> <span class="lose">pariatur.</span> <span class="lose">Excepteur</span> <span class="lose">sint</span> <span class="lose">occaecat</span></p>
+                <p><span class="lose">cupidatat</span> <span class="lose">non</span> <span class="lose">proident,</span> <span class="lose">sunt</span> <span class="lose">in</span> <span class="lose">culpa</span> <span class="lose">qui</span> <span class="keep">officia</span></p>
+                <p><span class="lose">deserunt</span> <span class="keep">mollit</span> <span class="lose">anim</span> <span class="lose">id</span> <span class="keep">est</span> <span class="lose">laborum.</span></p>
+                <p><span class="lose">Lorem</span> <span class="lose">ipsum</span> <span class="lose">dolor</span> <span class="lose">sit</span> <span class="lose">amet,</span> <span class="keep">consectetur</span> <span class="lose">adipiscing</span> <span class="lose">elit,</span></p>
+                <p><span class="lose">sed</span> <span class="lose">do</span> <span class="keep">eiusmod</span> <span class="lose">tempor</span> <span class="keep">incididunt</span> <span class="keep">ut</span> <span class="keep">labore</span></p>
+                <p><span class="lose">et</span> <span class="lose">dolore</span> <span class="lose">magna</span> <span class="lose">aliqua.</span> <span class="lose">Ut</span> <span class="lose">enim</span> <span class="keep">ad</span> <span class="keep">minim</span> <span class="lose">veniam,</span></p>
+                <p><span class="lose">quis</span> <span class="lose">nostrud</span> <span class="lose">exercitation</span> <span class="keep">ullamco</span> <span class="lose">laboris</span> <span class="lose">nisi</span> <span class="lose">ut</span></p>
+                <p><span class="lose">aliquip</span> <span class="lose">ex</span> <span class="keep">ea</span> <span class="lose">commodo</span> <span class="lose">consequat.</span> <span class="keep">Duis</span> <span class="lose">aute</span> <span class="lose">irure</span> <span class="lose">dolor</span></p>
+                <p><span class="keep">in</span> <span class="keep">reprehenderit</span> <span class="lose">in</span> <span class="lose">voluptate</span> <span class="lose">velit</span> <span class="lose">esse</span> <span class="lose">cillum</span> <span class="lose">dolore</span></p>
+                <p><span class="lose">eu</span> <span class="lose">fugiat</span> <span class="lose">nulla</span> <span class="lose">pariatur.</span> <span class="lose">Excepteur</span> <span class="lose">sint</span> <span class="lose">occaecat</span></p>
+                <p><span class="lose">cupidatat</span> <span class="lose">non</span> <span class="lose">proident,</span> <span class="lose">sunt</span> <span class="lose">in</span> <span class="lose">culpa</span> <span class="lose">qui</span> <span class="lose">officia</span></p>
+                <p><span class="lose">deserunt</span> <span class="lose">mollit</span> <span class="lose">anim</span> <span class="lose">id</span> <span class="lose">est</span> <span class="lose">laborum.</span></p>
+                <p><span class="lose">Lorem</span> <span class="lose">ipsum</span> <span class="lose">dolor</span> <span class="lose">sit</span> <span class="keep">amet,</span> <span class="lose">consectetur</span> <span class="lose">adipiscing</span> <span class="lose">elit,</span></p>
+                <p><span class="lose">sed</span> <span class="lose">do</span> <span class="keep">eiusmod</span> <span class="lose">tempor</span> <span class="lose">incididunt</span> <span class="lose">ut</span> <span class="lose">labore</span></p>
+                <p><span class="lose">et</span> <span class="lose">dolore</span> <span class="lose">magna</span> <span class="lose">aliqua.</span> <span class="lose">Ut</span> <span class="keep">enim</span> <span class="lose">ad</span> <span class="lose">minim</span> <span class="lose">veniam,</span></p>
+                <p><span class="lose">quis</span> <span class="lose">nostrud</span> <span class="keep">exercitation</span> <span class="lose">ullamco</span> <span class="lose">laboris</span> <span class="lose">nisi</span> <span class="lose">ut</span></p>
+                <p><span class="lose">aliquip</span> <span class="keep">ex</span> <span class="keep">ea</span> <span class="lose">commodo</span> <span class="lose">consequat.</span> <span class="lose">Duis</span> <span class="lose">aute</span> <span class="lose">irure</span> <span class="lose">dolor</span></p>
+                <p><span class="lose">in</span> <span class="lose">reprehenderit</span> <span class="lose">in</span> <span class="lose">voluptate</span> <span class="lose">velit</span> <span class="lose">esse</span> <span class="lose">cillum</span> <span class="lose">dolore</span></p>
+                <p><span class="keep">eu</span> <span class="lose">fugiat</span> <span class="lose">nulla</span> <span class="lose">pariatur.</span> <span class="lose">Excepteur</span> <span class="keep">sint</span> <span class="lose">occaecat</span></p>
+                <p><span class="lose">cupidatat</span> <span class="lose">non</span> <span class="lose">proident,</span> <span class="lose">sunt</span> <span class="lose">in</span> <span class="lose">culpa</span> <span class="lose">qui</span> <span class="lose">officia</span></p>
+                <p><span class="lose">deserunt</span> <span class="keep">mollit</span> <span class="lose">anim</span> <span class="lose">id</span> <span class="lose">est</span> <span class="keep">laborum.</span></p>
+                
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script>
+
+            $(document).ready(function(){
+                // control speed of text scrolling up the screen
+                interval_ms = 10;
+                step_px = 1;
+
+                //counter for keeping track of which BG image is displayed 
+                bg_count =  1;
+
+
+                //function for moving text up the screen
+                setInterval(function(){
+                    //move scroll
+                    if(
+                        $("#scroll").position().top > (0 - $("#scroll").height())
+                    ) {
+                        //scroll down
+                        $("#scroll").css({"top": ($("#scroll").position().top -step_px) })
+                    } else {
+                        //reset
+                        $("#scroll").css({"top": "100vh"});
+                        $(".lose").each(function(){
+                            $(this).attr( "class", "lose" )
+                        });
+                    }
+
+                    //fade away elements
+                    $(".lose").each(function(){
+                        if ( 
+                            $("#scroll").position().top+$(this).position().top
+                                <
+                            $("body").height()*0.75
+                        ) {
+                            $(this).addClass('erased');
+                        }
+
+                    });
+                },interval_ms);
+
+                
+                //cycling images
+                setInterval(function(){
+                    if ( $("#img-container").hasClass("bg-reveal") ) {
+                        $("#img-container").removeClass("bg-reveal");
+                        $("#img-container").addClass("bg-fade");
+                    } else {
+                        $("#img-container").removeClass("bg-fade");
+                        $("#img-container").addClass("bg-reveal");
+                    }
+                    if ( $("#img-container").hasClass("bg-reveal") ) {
+                        if (bg_count < 5) {
+                            bg_count = bg_count + 1;
+                        } else {
+                            bg_count = 1;
+                        }
+                        $("#img-container").css({"background-image":"url('images/bg-"+bg_count+".png')"});
+                        
+                    }
+                },31000);
+
+            });
+        </script>
+    </body>
+</html>

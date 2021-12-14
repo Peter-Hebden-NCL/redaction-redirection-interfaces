@@ -1,0 +1,3 @@
+Required in this folder:
+
+- A series of short video files to be played in background as words in the display are revealed. There should be three versions of each video, and each batch of three should be named to match one of the words from the 'neologisms' div elements in index.html (eg. wordone_1.mov, wordone_2.mov, wordone_3.mov, wordtwo_1.mov, wordtwo_2.mov, wordtwo_3.mov, etc.)
